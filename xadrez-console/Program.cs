@@ -11,11 +11,10 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-            Posicao P;
-            //instanciando a posição
-            P = new Posicao (3, 4);
+            //teste
+            Tabuleiro tab = new Tabuleiro(8, 8);
 
-            Console.WriteLine("Posi: " + P);
+            Tela.imprimirTabuleiro(tab);
 
             Console.ReadLine();
         }
