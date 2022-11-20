@@ -18,7 +18,7 @@ namespace xadrez_console
                     //acessar a peça no tabuleiro
                     if(tab.peca(i, j) == null)
                     {
-                        Console.Write(" - ");
+                        Console.Write("- ");
                     }
                     else
                     {
