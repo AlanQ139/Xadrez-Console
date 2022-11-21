@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     class Peca
     {
@@ -20,6 +14,11 @@ namespace tabuleiro
             this.tabuleiro = tabuleiro;
             this.cor = cor;
             this.qtdMovimentos = 0;
+        }
+
+        public void incrementarQtdMovimentos() 
+        {
+            qtdMovimentos++; 
         }
     }
 }
