@@ -46,7 +46,7 @@ namespace xadrez
             }
 
             //direita
-            pos.definirValores(posicao.linha, posicao.coluna);
+            pos.definirValores(posicao.linha, posicao.coluna + 1);
             if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
@@ -86,6 +86,8 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
             }
+
+            return mat;
         }
     }
 }
