@@ -7,9 +7,9 @@ namespace xadrez
     {
         public Tabuleiro tab { get; private set; }
 
-        private int turno;
+        public int turno { get; private set; }
 
-        private Cor jogadorAtual;
+        public Cor jogadorAtual { get; private set; }
 
         public bool terminada { get; private set; }
 
@@ -30,10 +30,32 @@ namespace xadrez
             tab.ColocarPeca(p, destino);
         }
 
+        public void realizaJogada (Posicao origem, Posicao destino)
+        {
+            executaMovimento(origem, destino);
+            turno++;
+            mudaJogador();
+        }
+
+        private void mudaJogador()
+        {
+            if(jogadorAtual == Cor.Branca)
+            {
+                jogadorAtual= Cor.Preta;
+            }
+            else
+            {
+                jogadorAtual = Cor.Branca;
+            }
+        }
+
         private void colocarPecas()
         {
             tab.ColocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('c', 1).ToPosicao());
             tab.ColocarPeca(new Rei(tab, Cor.Branca), new PosicaoXadrez('a', 1).ToPosicao());
+
+            tab.ColocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('e', 7).ToPosicao());
+            tab.ColocarPeca(new Rei(tab, Cor.Preta), new PosicaoXadrez('d', 5).ToPosicao());
         }
     }
 }
