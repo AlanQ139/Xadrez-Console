@@ -66,11 +66,19 @@ namespace xadrez
             }
             if (jogadorAtual != tab.peca(pos).cor)
             {
-                throw new TabuleiroException("Não é sua a peça escolhida!");
+                throw new TabuleiroException("Não é sua a vez!");
             }
             if (!tab.peca(pos).existeMovimentosPossiveis())
             {
                 throw new TabuleiroException("Não existe movimentos possiveis para sua a peça escolhida!");
+            }
+        }
+
+        public void validarPosiçãoDeDestino(Posicao ogigem, Posicao destino)
+        {
+            if (!tab.peca(ogigem).podeMoverPara(destino))
+            {
+                throw new TabuleiroException("Destino invalido!");
             }
         }
     }
