@@ -34,9 +34,13 @@
 
         public abstract bool[,] movimentosPossiveis();
 
-        public void incrementarQtdMovimentos() 
+        public void incrementarQtdMovimentos()
         {
-            qtdMovimentos++; 
+            qtdMovimentos++;
+        }
+        public void decrementarQtdMovimentos()
+        {
+            qtdMovimentos--;
         }
 
         public bool podeMoverPara(Posicao pos)
