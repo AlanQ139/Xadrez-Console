@@ -251,7 +251,7 @@ namespace xadrez
 
         public void validarPosiçãoDeDestino(Posicao ogigem, Posicao destino)
         {
-            if (!tab.peca(ogigem).podeMoverPara(destino))
+            if (!tab.peca(ogigem).movimentoPosivel(destino))
             {
                 throw new TabuleiroException("Destino invalido!");
             }
