@@ -162,6 +162,26 @@ namespace xadrez
                 T.decrementarQtdMovimentos();
                 tab.ColocarPeca(T, origemT);
             }
+
+            //jogada especial do en passant
+            if(p is Peao)
+            {
+                if(origem.coluna != destino.coluna && pecaCapturada == vuneravelEnPassant)
+                {
+                    Peca peao = tab.retirarPeca(destino);
+                    Posicao posP;
+                    if(p.cor == Cor.Branca)
+                    {
+                        posP = new Posicao(3, destino.coluna);
+                    }
+                    else
+                    {
+                        posP = new Posicao(4, destino.coluna);
+                    }
+
+                    tab.ColocarPeca(peao, posP);
+                }
+            }
         }
 
         private void mudaJogador()
