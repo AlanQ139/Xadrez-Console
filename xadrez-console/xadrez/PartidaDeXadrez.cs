@@ -152,6 +152,10 @@ namespace xadrez
                     p = tab.retirarPeca(destino);
                     pecas.Remove(p);
                     Peca dama = new Dama(tab, p.cor);
+                    //adicionar a opção do usuario escolher a peça depois
+                    //Peca bispo = new Bispo(tab, p.cor);
+                    //Peca cavalo = new Cavalo(tab, p.cor);
+                    //Peca torre = new Torre(tab, p.cor);
                     tab.ColocarPeca(dama, destino);
                     pecas.Add(dama);
                 }
