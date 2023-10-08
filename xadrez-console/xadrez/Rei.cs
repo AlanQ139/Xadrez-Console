@@ -16,6 +16,10 @@ namespace xadrez
             this.partida = partida;
         }
 
+        public Rei(Tabuleiro tabuleiro, Cor cor) : base(tabuleiro, cor)
+        {
+        }
+
         public override string ToString()
         {
             return "R";
